@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://Sprites/tileset.png" type="Texture" id=1]
+
+[node name="Tileset" type="Node2D"]
+
+[node name="Wall (Top Left)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Wall (Top Right)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 48, 0, 16, 16 )
+
+[node name="Wall (Bottom Right)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 48, 48, 16, 16 )
+
+[node name="Wall (Bottom Left)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 48, 16, 16 )
+
+[node name="Wall (Center Left)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 32, 16, 16 )
+
+[node name="Wall (Center Top)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 16, 0, 16, 16 )
+
+[node name="Wall (Center Right)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 48, 16, 16, 16 )
+
+[node name="Wall (Center Bottom)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 48, 16, 16 )
+
+[node name="Wall (Walkway Left)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="Wall (Walkway Top)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 0, 16, 16 )
+
+[node name="Wall (Walkway Bottom)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 16, 48, 16, 16 )
+
+[node name="Wall (Walkway Right)" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 48, 32, 16, 16 )
+
+[node name="Floor" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 16, 16, 16, 16 )
+
+
