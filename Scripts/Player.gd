@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 export var speed = 50
 
@@ -9,26 +9,24 @@ var velocity = Vector2()
 func _ready():
 	print("Player Ready.")
 	set_fixed_process(true)
-	screensize = get_viewport_rect().size
-	extents = get_node("Sprite").get_texture().get_size() / 2
-	#set_pos(screensize / 2)
 	
 func _fixed_process(delta):
-	var input = Vector2(0,0)
-	var pos
+	var direction = Vector2(0, 0)
 	
-	if (Input.is_action_pressed("ui_sprint")):
-		speed = 100
-	else:
-		speed = 50
+	if (Input.is_action_pressed("ui_left")):
+		direction += Vector2(-1, 0)
+	elif (Input.is_action_pressed("ui_up")):
+		direction += Vector2(0, -1)
+	elif (Input.is_action_pressed("ui_right")):
+		direction += Vector2(1, 0)
+	elif (Input.is_action_pressed("ui_down")):
+		direction += Vector2(0, 1)
 	
-	input = Vector2(0,0)
-	input.x = Input.is_action_pressed("ui_right") - Input.is_action_pressed("ui_left")
-	input.y = Input.is_action_pressed("ui_down") - Input.is_action_pressed("ui_up")
-	velocity = input.normalized() * speed
+	var motion = direction * speed * delta
+	motion = move(motion)
 	
-	pos = get_pos() + velocity * delta
-	pos.x = clamp(pos.x, 0, screensize.width)
-	pos.y = clamp(pos.y, 0, screensize.height)
-	
-	set_pos(pos)
+	if (is_colliding()):
+		var n = get_collision_normal()
+		motion = n.slide(motion)
+		direction = n.slide(direction)
+		move(motion)
