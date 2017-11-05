@@ -15,11 +15,11 @@ func _fixed_process(delta):
 	
 	if (Input.is_action_pressed("ui_left")):
 		direction += Vector2(-1, 0)
-	elif (Input.is_action_pressed("ui_up")):
+	if (Input.is_action_pressed("ui_up")):
 		direction += Vector2(0, -1)
-	elif (Input.is_action_pressed("ui_right")):
+	if (Input.is_action_pressed("ui_right")):
 		direction += Vector2(1, 0)
-	elif (Input.is_action_pressed("ui_down")):
+	if (Input.is_action_pressed("ui_down")):
 		direction += Vector2(0, 1)
 	
 	var motion = direction * speed * delta
