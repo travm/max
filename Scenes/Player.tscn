@@ -135,4 +135,11 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, 8 )
+layer_mask = 1
+type_mask = 15
+
 

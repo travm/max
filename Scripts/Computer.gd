@@ -1,18 +1,17 @@
-extends Area2D
+extends StaticBody2D
 
 var Bubble
+var RayCast
 
 func _ready():
+	set_process(true)
 	Bubble = get_node("Bubble")
+	RayCast = get_node("RayCast2D")
 
-
-func _on_computer_body_enter( body ):
-	if (body.get_name() == "Player"):
-		print("Player is near.")
+func _process(delta):
+	if (RayCast.is_colliding()):
+		print(RayCast.get_collider().get_name())
 		Bubble.set_hidden(false);
-
-
-func _on_computer_body_exit( body ):
-	if (body.get_name() == "Player"):
-		print("Player is leaving.")
+		print("Colliding!")
+	else:
 		Bubble.set_hidden(true);

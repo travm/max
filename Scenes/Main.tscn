@@ -29,7 +29,7 @@ tile_data = IntArray( 0, 12, 1, 7, 2, 7, 3, 7, 4, 7, 5, 7, 6, 7, 7, 7, 8, 7, 9, 
 
 [node name="Computer" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 200, 134 )
+transform/pos = Vector2( 200, 135 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
