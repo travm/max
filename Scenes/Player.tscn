@@ -86,10 +86,11 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.001
 script/script = ExtResource( 1 )
-speed = 25
+speed = 50
 
 [node name="Sprite" type="Sprite" parent="."]
 
+editor/display_folded = true
 texture = ExtResource( 2 )
 hframes = 4
 region_rect = Rect2( 0, 0, 16, 16 )

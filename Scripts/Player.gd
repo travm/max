@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 25
+export var speed = 50
 
 var screensize
 var extents
@@ -31,9 +31,9 @@ func _fixed_process(delta):
 	
 	# Sprint Control
 	if (Input.is_action_pressed("ui_sprint")):
-		speed = 50
+		speed = 75
 	else:
-		speed = 25
+		speed = 50
 	
 	var motion = direction * speed * delta
 	motion = move(motion)
