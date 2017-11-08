@@ -3,6 +3,7 @@ extends StaticBody2D
 var Bubble
 var RayCast
 var AnimationPlayer
+var Global
 
 func _ready():
 	set_process(true)
@@ -11,10 +12,12 @@ func _ready():
 	AnimationPlayer = get_node("Bubble/AnimationPlayer")
 	RayCast = get_node("RayCast2D")
 	AnimationPlayer.play("Float")
+	Global = get_node("/root/Global")
 
 func _input(event):
-	if (RayCast.is_colliding() and event.is_action_pressed("ui_interact")):
+	if (RayCast.is_colliding() and event.is_action_pressed("ui_accept")):
 		print("Using Computer!")
+		get_tree().change_scene("res://Scenes/ComputerInterface.tscn")
 
 func _process(delta):
 	if (RayCast.is_colliding()):

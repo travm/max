@@ -41,7 +41,7 @@ func _fixed_process(delta):
 	else:
 		speed = 50
 	
-	var motion = direction * speed * delta
+	var motion = direction.normalized() * speed * delta
 	motion = move(motion)
 	
 	# Geno, them boards up there are slippy!

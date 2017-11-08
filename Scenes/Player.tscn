@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6, 6 )
+extents = Vector2( 6, 4 )
 
 [sub_resource type="Animation" id=2]
 
@@ -80,7 +80,7 @@ tracks/0/keys = {
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 4 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -111,7 +111,7 @@ autoplay = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 0, 2 )
+transform/pos = Vector2( 0, 4 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -121,7 +121,7 @@ _update_shape_index = 0
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.25, 0.25 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -129,11 +129,11 @@ limit/bottom = 10000000
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = true
-smoothing/speed = 6.0
-drag_margin/left = 0.3
-drag_margin/top = 0.3
-drag_margin/right = 0.3
-drag_margin/bottom = 0.3
+smoothing/speed = 5.0
+drag_margin/left = 0.1
+drag_margin/top = 0.1
+drag_margin/right = 0.1
+drag_margin/bottom = 0.1
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
