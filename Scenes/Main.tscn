@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Computer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
 
@@ -34,5 +35,7 @@ transform/pos = Vector2( 200, 135 )
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 240, 160 )
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
 
 
