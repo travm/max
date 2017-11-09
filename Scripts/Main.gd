@@ -1,10 +1,15 @@
 extends Node2D
 
 var Global
+var Player
 
 func _ready():
 	set_process_input(true)
 	Global = get_node("/root/Global")
+	Player = get_node("Player")
+	
+	# Set Player Position
+	Player.set_pos(Global.player_pos)
 	
 func _input(event):
 	if (event.is_action_pressed("ui_cancel")):

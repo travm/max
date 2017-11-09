@@ -14,6 +14,7 @@ func _ready():
 	intensity = 1
 	intensity_cost = 50
 	wait_time = 1
+	player_pos = Vector2(240, 160)
 	
 	# Incrementing Timer
 	TIMER = Timer.new()

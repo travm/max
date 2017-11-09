@@ -16,7 +16,11 @@ func _ready():
 
 func _input(event):
 	if (RayCast.is_colliding() and event.is_action_pressed("ui_accept")):
-		print("Using Computer!")
+		# Store Player Location
+		if (RayCast.get_collider().get_name() == "Player"):
+			Global.player_pos = RayCast.get_collider().get_pos()
+		
+		# Display Computer Interface	
 		get_tree().change_scene("res://Scenes/ComputerInterface.tscn")
 
 func _process(delta):
