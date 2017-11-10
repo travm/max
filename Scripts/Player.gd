@@ -8,12 +8,14 @@ var velocity = Vector2()
 
 var AnimationPlayer
 var RayCast
+var SamplePlayer
 
 func _ready():
 	set_fixed_process(true)
 	
 	AnimationPlayer = get_node("Sprite/AnimationPlayer")
 	RayCast = get_node("RayCast2D")
+	SamplePlayer = get_node("SamplePlayer")
 	
 func _fixed_process(delta):
 	var direction = Vector2(0, 0)
