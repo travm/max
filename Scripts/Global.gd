@@ -27,7 +27,6 @@ func _ready():
 	Interval.connect("timeout", self, "increase_units")
 	Interval.set_wait_time(wait_time)
 	add_child(Interval)
-	Interval.start()
 	
 	# Add Audio Samples
 	Library = SampleLibrary.new()
@@ -53,6 +52,12 @@ func increase_intensity():
 	else:
 		print("CANNOT AFFORD INTENSITY INCREASE")
 		Sound.play("hurt")
+
+func start_timer():
+	Interval.start()
+	
+func stop_timer():
+	Interval.stop()
 
 func set_player_pos():
 	pass

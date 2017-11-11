@@ -11,6 +11,9 @@ func _ready():
 	# Set Player Position
 	Player.set_pos(Global.player_pos)
 	
+	# Start Global Timer
+	Global.start_timer()
+	
 func _input(event):
 	if (event.is_action_pressed("ui_cancel")):
 		get_tree().change_scene("res://Scenes/Title.tscn")
