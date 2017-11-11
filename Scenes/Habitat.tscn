@@ -5,9 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6, 8 )
+extents = Vector2( 8, 8 )
 
-[node name="Cage" type="StaticBody2D"]
+[node name="Habitat" type="StaticBody2D"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -20,11 +20,17 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Table" type="Sprite" parent="."]
 
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 48, 80, 16, 16 )
+region_rect = Rect2( 16, 80, 16, 16 )
+
+[node name="Terrarium" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 80, 80, 16, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

@@ -19,7 +19,7 @@ func _ready():
 	units = 0
 	intensity = 1
 	intensity_cost = 50
-	wait_time = 1
+	wait_time = .25
 	player_pos = Vector2(240, 160)
 	
 	# Incrementing Timer

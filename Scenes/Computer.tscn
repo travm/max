@@ -56,7 +56,7 @@ region_rect = Rect2( 0, 80, 16, 16 )
 
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 16, 80, 16, 16 )
+region_rect = Rect2( 32, 80, 16, 16 )
 
 [node name="Bubble" type="Sprite" parent="."]
 

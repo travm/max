@@ -118,6 +118,7 @@ autoplay = "Rise"
 
 [node name="Clouds Back" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 209.422, 160 )
 texture = ExtResource( 3 )
 
@@ -134,6 +135,7 @@ autoplay = "Move"
 
 [node name="Clouds Front" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 176, 160 )
 texture = ExtResource( 4 )
 
@@ -178,7 +180,7 @@ max_lines_visible = -1
 [node name="Name" type="Sprite" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 384, 77.785 )
+transform/pos = Vector2( 384, 75.0172 )
 texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Name"]
