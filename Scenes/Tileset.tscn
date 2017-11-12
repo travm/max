@@ -1030,65 +1030,58 @@ texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 16, 64, 16, 16 )
 
-[node name="Floor (Alt)" type="Sprite" parent="."]
+[node name="Floor (Boards)" type="Sprite" parent="."]
 
 transform/pos = Vector2( 40, 72 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 32, 64, 16, 16 )
 
-[node name="Floor (Boards)" type="Sprite" parent="."]
+[node name="Floor (Diagonal Boards)" type="Sprite" parent="."]
 
 transform/pos = Vector2( 56, 72 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 48, 64, 16, 16 )
 
-[node name="Floor (Boards Diagonal)" type="Sprite" parent="."]
-
-transform/pos = Vector2( 72, 72 )
-texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 64, 64, 16, 16 )
-
 [node name="Carpet (Corner Top Left)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 72, 104 )
+transform/pos = Vector2( 72, 72 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 64, 96, 16, 16 )
 
 [node name="Carpet (Corner Bottom Left)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 72, 120 )
+transform/pos = Vector2( 72, 88 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 64, 112, 16, 16 )
 
 [node name="Carpet (Middle Top)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 88, 104 )
+transform/pos = Vector2( 88, 72 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 80, 96, 16, 16 )
 
 [node name="Carpet (Middle Bottom)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 88, 120 )
+transform/pos = Vector2( 88, 88 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 80, 112, 16, 16 )
 
 [node name="Carpet (Corner Top Right)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 104, 104 )
+transform/pos = Vector2( 104, 72 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 96, 96, 16, 16 )
 
 [node name="Carpet (Corner Bottom Right)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 104, 120 )
+transform/pos = Vector2( 104, 88 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 96, 112, 16, 16 )

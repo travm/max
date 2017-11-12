@@ -19,7 +19,7 @@ func _ready():
 	units = 0
 	intensity = 1
 	intensity_cost = 50
-	wait_time = .25
+	wait_time = 1
 	player_pos = Vector2(240, 160)
 	
 	# Incrementing Timer
@@ -38,19 +38,16 @@ func _ready():
 	Sound.set_sample_library(Library) 
 
 func increase_units():
-	print('INCREASE')
 	Sound.play("tick")
 	units = units + intensity
 
 func increase_intensity():
 	if (units >= intensity_cost):
-		print("INCREASING INTENSITY")
 		Sound.play("pickup")
 		units = units - intensity_cost
 		intensity = intensity + 1
 		intensity_cost = intensity_cost + 10
 	else:
-		print("CANNOT AFFORD INTENSITY INCREASE")
 		Sound.play("hurt")
 
 func start_timer():

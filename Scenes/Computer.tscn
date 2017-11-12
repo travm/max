@@ -2,28 +2,12 @@
 
 [ext_resource path="res://Scripts/Computer.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
+[ext_resource path="res://Animations/Float.tres" type="Animation" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6, 7 )
-
-[sub_resource type="Animation" id=2]
-
-resource/name = "Float"
-length = 1.0
-loop = true
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:transform/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 0.5, 1 ),
-"transitions": FloatArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -9 ), Vector2( 0, -11 ), Vector2( 0, -9 ) ]
-}
 
 [node name="Computer" type="StaticBody2D"]
 
@@ -60,8 +44,7 @@ region_rect = Rect2( 32, 80, 16, 16 )
 
 [node name="Bubble" type="Sprite" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 0, -10.8293 )
+transform/pos = Vector2( 0, -9.3944 )
 texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 0, 96, 16, 16 )
@@ -71,7 +54,7 @@ region_rect = Rect2( 0, 96, 16, 16 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Float = SubResource( 2 )
+anims/Float = ExtResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/player-alt.png" type="Texture" id=2]
-[ext_resource path="res://Audio/footstep.smp" type="Sample" id=3]
+[ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/player-alt.png" type="Texture" id=3]
+[ext_resource path="res://Audio/footstep.smp" type="Sample" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -83,7 +84,7 @@ samples/footstep = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 3 )
+"sample": ExtResource( 4 )
 }
 
 [node name="Player" type="KinematicBody2D"]
@@ -98,10 +99,18 @@ collision/margin = 0.001
 script/script = ExtResource( 1 )
 speed = 50
 
+[node name="Shadow" type="Sprite" parent="."]
+
+visibility/opacity = 0.25
+transform/pos = Vector2( 0, 8 )
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 0, 112, 16, 16 )
+
 [node name="Sprite" type="Sprite" parent="."]
 
 editor/display_folded = true
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 hframes = 4
 region_rect = Rect2( 0, 0, 16, 16 )
 

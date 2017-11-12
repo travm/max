@@ -24,4 +24,4 @@ func _input(event):
 
 func _process(delta):
 	Units.set_text(str(Global.units))
-	Intensity.set_text(str(Global.intensity))
+	Intensity.set_text(str(Global.intensity) + " (" + str(Global.intensity_cost) + ")")
