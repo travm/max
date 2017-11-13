@@ -8,20 +8,13 @@ var Interval
 var Library
 var Sound
 
-var units
-var intensity
-var intensity_cost
-var wait_time
-var player_pos
+var units = 0
+var intensity = 1
+var intensity_cost = 50
+var wait_time = 1
+var player_pos = Vector2(240, 160)
 
 func _ready():
-	# Initialize State Variables
-	units = 0
-	intensity = 1
-	intensity_cost = 50
-	wait_time = 1
-	player_pos = Vector2(240, 160)
-	
 	# Incrementing Timer
 	Interval = Timer.new()
 	Interval.connect("timeout", self, "increase_units")

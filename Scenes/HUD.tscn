@@ -36,4 +36,22 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 384.0
+margin/top = 288.0
+margin/right = 467.0
+margin/bottom = 308.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Save Game"
+flat = false
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+
 

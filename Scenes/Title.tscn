@@ -86,7 +86,7 @@ tracks/0/keys = {
 
 script/script = ExtResource( 1 )
 
-[node name="ColorFrame" type="ColorFrame" parent="."]
+[node name="Background" type="ColorFrame" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true

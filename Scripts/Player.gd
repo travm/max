@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var Global
+
 export var speed = 50
 
 var screensize
@@ -12,6 +14,8 @@ var SamplePlayer
 
 func _ready():
 	set_fixed_process(true)
+	
+	Global = get_node("/root/Global")
 	
 	AnimationPlayer = get_node("Sprite/AnimationPlayer")
 	RayCast = get_node("RayCast2D")
@@ -53,3 +57,6 @@ func _fixed_process(delta):
 		motion = n.slide(motion)
 		direction = n.slide(direction)
 		move(motion)
+		
+	# Set Player Position In Global
+	Global.player_pos = get_pos()
