@@ -21,7 +21,7 @@ func _input(event):
 			Global.player_pos = RayCast.get_collider().get_pos()
 		
 		# Display Computer Interface	
-		get_tree().change_scene("res://Scenes/ComputerInterface.tscn")
+		get_tree().change_scene("res://Scenes/HabitatInterface.tscn")
 
 func _process(delta):
 	if (RayCast.is_colliding()):
