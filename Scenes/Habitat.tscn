@@ -43,6 +43,7 @@ region_rect = Rect2( 80, 80, 16, 16 )
 
 [node name="Bubble" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -9.40147 )
 texture = ExtResource( 2 )
 region = true
