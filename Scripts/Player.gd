@@ -4,22 +4,14 @@ var Global
 
 export var speed = 50
 
-var screensize
-var extents
-var velocity = Vector2()
-
 var AnimationPlayer
 var RayCast
-var SamplePlayer
 
 func _ready():
 	set_fixed_process(true)
-	
 	Global = get_node("/root/Global")
-	
 	AnimationPlayer = get_node("Sprite/AnimationPlayer")
 	RayCast = get_node("RayCast2D")
-	SamplePlayer = get_node("SamplePlayer")
 	
 func _fixed_process(delta):
 	var direction = Vector2(0, 0)
@@ -59,4 +51,4 @@ func _fixed_process(delta):
 		move(motion)
 		
 	# Set Player Position In Global
-	Global.player_pos = get_pos()
+	Global.set_player_pos(get_pos())

@@ -58,7 +58,7 @@ anims/Float = ExtResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "Float"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 

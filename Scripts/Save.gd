@@ -13,13 +13,13 @@ func save_game():
 	# Create Save Game Dictionary
 	var save_dict = {
 		Global = {
-			units = Global.units,
-			intensity = Global.intensity,
-			intensity_cost = Global.intensity_cost,
-			wait_time = Global.wait_time,
+			units = Global.get_units(),
+			intensity = Global.get_intensity(),
+			intensity_cost = Global.get_intensity_cost(),
+			wait_time = Global.get_wait_time(),
 			player_pos = {
-				x = Global.player_pos.x,
-				y = Global.player_pos.y
+				x = Global.get_player_pos().x,
+				y = Global.get_player_pos().y
 			}
 		}
 	}
@@ -41,10 +41,10 @@ func load_game():
 	data.parse_json(save_file.get_as_text())
 	
 	# Update Global Properties
-	Global.units = data["Global"]["units"]
-	Global.intensity = data["Global"]["intensity"]
-	Global.intensity_cost = data["Global"]["intensity_cost"]
-	Global.wait_time = data["Global"]["wait_time"]
-	Global.player_pos = Vector2(data["Global"]["player_pos"]["x"], data["Global"]["player_pos"]["y"])
+	Global.set_units(data["Global"]["units"])
+	Global.set_intensity(data["Global"]["intensity"])
+	Global.set_intensity_cost(data["Global"]["intensity_cost"])
+	Global.set_wait_time(data["Global"]["wait_time"])
+	Global.set_player_pos(Vector2(data["Global"]["player_pos"]["x"], data["Global"]["player_pos"]["y"]))
 	
 	

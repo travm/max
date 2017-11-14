@@ -12,7 +12,10 @@ func _ready():
 	Player.set_pos(Global.player_pos)
 	
 	# Start Global Timer
-	Global.start_timer()
+	if (Global.is_timer_active()):
+		print("Timer already active!")
+	else:
+		Global.start_timer()
 	
 func _input(event):
 	if (event.is_action_pressed("ui_cancel")):
@@ -20,4 +23,3 @@ func _input(event):
 	
 	if (event.is_action_pressed("ui_select")):
 		Global.increase_units()
-		print(Global.units);

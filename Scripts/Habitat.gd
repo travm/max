@@ -16,7 +16,7 @@ func _input(event):
 	if (RayCast.is_colliding() and event.is_action_pressed("ui_accept")):
 		# Store Player Location
 		if (RayCast.get_collider().get_name() == "Player"):
-			Global.player_pos = RayCast.get_collider().get_pos()
+			Global.set_player_pos(RayCast.get_collider().get_pos())
 		
 		# Display Computer Interface	
 		get_tree().change_scene("res://Scenes/HabitatInterface.tscn")

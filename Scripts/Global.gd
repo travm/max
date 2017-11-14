@@ -19,6 +19,7 @@ func _ready():
 	Interval = Timer.new()
 	Interval.connect("timeout", self, "increase_units")
 	Interval.set_wait_time(wait_time)
+	Interval.set_active(false)
 	add_child(Interval)
 	
 	# Add Audio Samples
@@ -30,6 +31,7 @@ func _ready():
 	Sound.set_polyphony(2)
 	Sound.set_sample_library(Library) 
 
+# Methods
 func increase_units():
 	Sound.play("tick")
 	units = units + intensity
@@ -44,13 +46,43 @@ func increase_intensity():
 		Sound.play("hurt")
 
 func start_timer():
+	Interval.set_active(true)
 	Interval.start()
 	
 func stop_timer():
+	Interval.set_active(false)
 	Interval.stop()
+	
+func is_timer_active():
+	return Interval.is_active()
 
-func set_player_pos():
-	pass
+# Getters & Setters
+func get_units():
+	return units
+
+func set_units(value):
+	units = value
+
+func get_intensity():
+	return intensity
+
+func set_intensity(value):
+	intensity = value
+	
+func get_intensity_cost():
+	return intensity_cost
+
+func set_intensity_cost(value):
+	intensity_cost = value
+
+func get_wait_time():
+	return wait_time
+
+func set_wait_time(value):
+	wait_time = value
 
 func get_player_pos():
-	pass
+	return player_pos
+
+func set_player_pos(value):
+	player_pos = value
