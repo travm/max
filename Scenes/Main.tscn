@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://Scenes/Computer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Habitat.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Couch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Computer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Habitat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 
@@ -65,18 +66,22 @@ collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray( 393225, 0, 393226, 5, 393227, 5, 393228, 5, 393229, 5, 393230, 5, 393231, 5, 393232, 5, 393233, 5, 393234, 5, 393235, 5, 393236, 1, 458761, 8, 458772, 6, 524297, 8, 524308, 6, 589833, 8, 589844, 6, 655369, 8, 655380, 6, 720905, 8, 720916, 6, 786441, 8, 786452, 6, 851977, 3, 851978, 7, 851979, 7, 851980, 7, 851981, 7, 851982, 7, 851983, 7, 851984, 7, 851985, 7, 851986, 7, 851987, 7, 851988, 2 )
 
-[node name="Computer" parent="." instance=ExtResource( 3 )]
+[node name="Couch" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 239, 117 )
+
+[node name="Computer" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 168, 119 )
 
-[node name="Habitat" parent="." instance=ExtResource( 4 )]
+[node name="Habitat" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 185, 119 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 240, 160 )
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource( 7 )]
 
 
