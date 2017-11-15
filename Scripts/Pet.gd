@@ -11,7 +11,7 @@ func _ready():
 	
 	# Initialize Sprite
 	Sprite = get_node("Sprite")
-	Sprite.set_texture(load(get_texture(4)))
+	Sprite.set_texture(load(get_texture(2)))
 	Sprite.set_hframes(2)
 	
 	# Random Pet Movement
