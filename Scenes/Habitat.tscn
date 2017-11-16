@@ -47,7 +47,7 @@ editor/display_folded = true
 transform/pos = Vector2( 0, -9.40147 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 0, 96, 16, 16 )
+region_rect = Rect2( 64, 64, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bubble"]
 

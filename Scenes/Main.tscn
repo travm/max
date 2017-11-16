@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Tileset.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Habitat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Bed.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D"]
 
@@ -83,5 +84,9 @@ transform/pos = Vector2( 185, 119 )
 transform/pos = Vector2( 240, 160 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Bed" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 300, 132 )
 
 

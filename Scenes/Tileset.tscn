@@ -1046,45 +1046,45 @@ region_rect = Rect2( 48, 64, 16, 16 )
 
 [node name="Carpet (Corner Top Left)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 72, 72 )
+transform/pos = Vector2( 8, 88 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 64, 96, 16, 16 )
+region_rect = Rect2( 0, 128, 16, 16 )
 
 [node name="Carpet (Corner Bottom Left)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 72, 88 )
+transform/pos = Vector2( 8, 104 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 64, 112, 16, 16 )
+region_rect = Rect2( 0, 144, 16, 16 )
 
 [node name="Carpet (Middle Top)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 88, 72 )
+transform/pos = Vector2( 24, 88 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 80, 96, 16, 16 )
+region_rect = Rect2( 16, 128, 16, 16 )
 
 [node name="Carpet (Middle Bottom)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 88, 88 )
+transform/pos = Vector2( 24, 104 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 80, 112, 16, 16 )
+region_rect = Rect2( 16, 144, 16, 16 )
 
 [node name="Carpet (Corner Top Right)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 104, 72 )
+transform/pos = Vector2( 40, 88 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 96, 96, 16, 16 )
+region_rect = Rect2( 32, 128, 16, 16 )
 
 [node name="Carpet (Corner Bottom Right)" type="Sprite" parent="."]
 
-transform/pos = Vector2( 104, 88 )
+transform/pos = Vector2( 40, 104 )
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 96, 112, 16, 16 )
+region_rect = Rect2( 32, 144, 16, 16 )
 
 [node name="Ceiling" type="Sprite" parent="."]
 
