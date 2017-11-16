@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scripts/HabitatInterface.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/habitat.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Pet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/nine-slice.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -64,5 +65,22 @@ transform/pos = Vector2( 368, 240 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Patch9Frame" type="Patch9Frame" parent="."]
+
+rect/scale = Vector2( 6, 6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 80.0
+margin/bottom = 19.0
+texture = ExtResource( 4 )
+patch_margin/left = 6
+patch_margin/top = 6
+patch_margin/right = 6
+patch_margin/bottom = 6
 
 
