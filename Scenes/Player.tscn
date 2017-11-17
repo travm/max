@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 
 resource/name = "Down Idle"
 length = 1.0
@@ -43,9 +43,8 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "Left"
 length = 1.0
 loop = true
 step = 0.25
@@ -60,7 +59,7 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 
 resource/name = "Left Idle"
 length = 1.0
@@ -77,9 +76,8 @@ tracks/0/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Right"
 length = 1.0
 loop = true
 step = 0.25
@@ -94,7 +92,7 @@ tracks/0/keys = {
 "values": [ 12, 13, 14, 15 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 resource/name = "Right Idle"
 length = 1.0
@@ -111,9 +109,8 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 
-resource/name = "Up"
 length = 1.0
 loop = true
 step = 0.25
@@ -163,7 +160,7 @@ visibility/opacity = 0.25
 transform/pos = Vector2( 0, 6 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 0, 112, 16, 16 )
+region_rect = Rect2( 96, 64, 16, 16 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -179,12 +176,12 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Down = SubResource( 2 )
-"anims/Down Idle" = SubResource( 6 )
-anims/Left = SubResource( 3 )
-"anims/Left Idle" = SubResource( 7 )
-anims/Right = SubResource( 4 )
-"anims/Right Idle" = SubResource( 8 )
-anims/Up = SubResource( 5 )
+"anims/Down Idle" = SubResource( 3 )
+anims/Left = SubResource( 4 )
+"anims/Left Idle" = SubResource( 5 )
+anims/Right = SubResource( 6 )
+"anims/Right Idle" = SubResource( 7 )
+anims/Up = SubResource( 8 )
 "anims/Up Idle" = SubResource( 9 )
 playback/active = true
 playback/speed = 1.5
