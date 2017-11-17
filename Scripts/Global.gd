@@ -4,7 +4,7 @@ var tickSample = preload("res://Audio/tick.smp")
 var pickupSample = preload("res://Audio/pickup.smp")
 var hurtSample = preload("res://Audio/hurt.smp")
 
-var Interval
+var IncrementalTimer
 var Library
 var Sound
 
@@ -16,12 +16,12 @@ var player_pos = Vector2(240, 160)
 
 func _ready():
 	# Incrementing Timer
-	Interval = Timer.new()
-	Interval.connect("timeout", self, "increase_units")
-	Interval.set_wait_time(wait_time)
-	Interval.set_active(false)
-	add_child(Interval)
-	
+	IncrementalTimer = Timer.new()
+	IncrementalTimer.connect("timeout", self, "increase_units")
+	IncrementalTimer.set_wait_time(wait_time)
+	IncrementalTimer.set_active(false)
+	add_child(IncrementalTimer)
+
 	# Add Audio Samples
 	Library = SampleLibrary.new()
 	Library.add_sample("tick", tickSample)
@@ -29,12 +29,15 @@ func _ready():
 	Library.add_sample("hurt", hurtSample)
 	Sound = SamplePlayer.new()
 	Sound.set_polyphony(2)
-	Sound.set_sample_library(Library) 
+	Sound.set_sample_library(Library)
 
 # Methods
 func increase_units():
 	Sound.play("tick")
 	units = units + intensity
+
+func decrease_units(amount):
+	units = units - amount
 
 func increase_intensity():
 	if (units >= intensity_cost):
@@ -45,16 +48,19 @@ func increase_intensity():
 	else:
 		Sound.play("hurt")
 
+func decrease_intensity(amount):
+	intensity = intensity - amount
+
 func start_timer():
-	Interval.set_active(true)
-	Interval.start()
-	
+	IncrementalTimer.set_active(true)
+	IncrementalTimer.start()
+
 func stop_timer():
-	Interval.set_active(false)
-	Interval.stop()
-	
+	IncrementalTimer.set_active(false)
+	IncrementalTimer.stop()
+
 func is_timer_active():
-	return Interval.is_active()
+	return IncrementalTimer.is_active()
 
 # Getters & Setters
 func get_units():
@@ -68,7 +74,7 @@ func get_intensity():
 
 func set_intensity(value):
 	intensity = value
-	
+
 func get_intensity_cost():
 	return intensity_cost
 
