@@ -1,6 +1,6 @@
 extends Node
 
-var Global
+var GlobalState
 
 var AgeTimer
 var StatsTimer
@@ -14,7 +14,7 @@ var evolution = 1
 func _ready():
 	set_process(true)
 
-	Global = get_node("root/Global")
+	GlobalState = get_node("root/Global")
 
 	# Add Timer To Decrease Stats Over Timer
 	StatsTimer = Timer.new()
@@ -87,10 +87,10 @@ func feed_pet(type):
 		return
 	if (type == "snack"):
 		hunger = hunger + 1;
-		Global.decrease_intensity(1)
+		GlobalState.decrease_intensity(1)
 	elif (type == "meal" and hunger <= 8):
 		hunger = hunger + 2
-		Global.decrease_intensity(2)
+		GlobalState.decrease_intensity(2)
 
 func bathe_pet():
 	if (hygiene == 10):

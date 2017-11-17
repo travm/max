@@ -1,21 +1,21 @@
 extends Node2D
 
-var Global
+var GlobalState
 var Player
 
 func _ready():
 	set_process_input(true)
-	Global = get_node("/root/Global")
+	GlobalState = get_node("/root/GlobalState")
 	Player = get_node("Player")
 
 	# Set Player Position
-	Player.set_pos(Global.player_pos)
+	Player.set_pos(GlobalState.player_pos)
 
 	# Start Global Timer
-	if (Global.is_timer_active()):
+	if (GlobalState.is_timer_active()):
 		print("Global timer already active!")
 	else:
-		Global.start_timer()
+		GlobalState.start_timer()
 
 	if (PetState.is_timer_active()):
 		print('PetState timers already active!')
@@ -27,4 +27,4 @@ func _input(event):
 		get_tree().change_scene("res://Scenes/Title.tscn")
 
 	if (event.is_action_pressed("ui_select")):
-		Global.increase_units()
+		GlobalState.increase_units()

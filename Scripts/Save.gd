@@ -1,27 +1,27 @@
 extends Node
 
-var Global
+var GlobalState
 var PetState
 
 const SAVE_PATH = "res://save.json"
 var _settings = {}
 
 func _ready():
-	Global = get_node("/root/Global")
+	GlobalState = get_node("/root/GlobalState")
 	PetState = get_node("/root/PetState")
 	load_game()
 
 func save_game():
 	# Create Save Game Dictionary
 	var save_dict = {
-		Global = {
-			units = Global.get_units(),
-			intensity = Global.get_intensity(),
-			intensity_cost = Global.get_intensity_cost(),
-			wait_time = Global.get_wait_time(),
+		GlobalState = {
+			units = GlobalState.get_units(),
+			intensity = GlobalState.get_intensity(),
+			intensity_cost = GlobalState.get_intensity_cost(),
+			wait_time = GlobalState.get_wait_time(),
 			player_pos = {
-				x = Global.get_player_pos().x,
-				y = Global.get_player_pos().y
+				x = GlobalState.get_player_pos().x,
+				y = GlobalState.get_player_pos().y
 			}
 		},
 		PetState = {
@@ -50,11 +50,11 @@ func load_game():
 	data.parse_json(save_file.get_as_text())
 
 	# Update Global Properties
-	Global.set_units(data["Global"]["units"])
-	Global.set_intensity(data["Global"]["intensity"])
-	Global.set_intensity_cost(data["Global"]["intensity_cost"])
-	Global.set_wait_time(data["Global"]["wait_time"])
-	Global.set_player_pos(Vector2(data["Global"]["player_pos"]["x"], data["Global"]["player_pos"]["y"]))
+	GlobalState.set_units(data["GlobalState"]["units"])
+	GlobalState.set_intensity(data["GlobalState"]["intensity"])
+	GlobalState.set_intensity_cost(data["GlobalState"]["intensity_cost"])
+	GlobalState.set_wait_time(data["GlobalState"]["wait_time"])
+	GlobalState.set_player_pos(Vector2(data["GlobalState"]["player_pos"]["x"], data["GlobalState"]["player_pos"]["y"]))
 
 	# Update PetState Properties
 	PetState.set_age(data["PetState"]["age"])

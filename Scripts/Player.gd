@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var Global
+var GlobalState
 
 var AnimationPlayer
 var RayCast
@@ -11,7 +11,7 @@ var lastAnimation = ""
 
 func _ready():
 	set_fixed_process(true)
-	Global = get_node("/root/Global")
+	GlobalState = get_node("/root/GlobalState")
 	AnimationPlayer = get_node("Sprite/AnimationPlayer")
 	RayCast = get_node("RayCast2D")
 
@@ -78,4 +78,4 @@ func _fixed_process(delta):
 		move(motion)
 
 	# Set Player Position In Global
-	Global.set_player_pos(get_pos())
+	GlobalState.set_player_pos(get_pos())
