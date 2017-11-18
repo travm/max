@@ -1093,4 +1093,18 @@ texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 0, 64, 16, 16 )
 
+[node name="Poster" type="Sprite" parent="."]
+
+transform/pos = Vector2( 72, 72 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 96, 96, 16, 16 )
+
+[node name="Picture Frame" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 72 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 112, 96, 16, 16 )
+
 
