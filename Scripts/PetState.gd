@@ -5,28 +5,30 @@ var GlobalState
 var AgeTimer
 var StatsTimer
 
-var age = 0;
-var hunger = 5
-var hygiene = 5
-var happiness = 4
+var age = 1;
+var hunger = 10
+var hygiene = 10
+var happiness = 10
 var evolution = 1
 
 func _ready():
 	set_process(true)
 
-	GlobalState = get_node("root/Global")
+	print(hunger)
+
+	GlobalState = get_node("/root/GlobalState")
 
 	# Add Timer To Decrease Stats Over Timer
 	StatsTimer = Timer.new()
 	StatsTimer.connect("timeout", self, "decrease_stats")
-	StatsTimer.set_wait_time(5)
+	StatsTimer.set_wait_time(30)
 	StatsTimer.set_active(false)
 	add_child(StatsTimer)
 
 	# Add Timer To Age The Pet (1 Day = 20 Seconds?)
 	AgeTimer = Timer.new()
 	AgeTimer.connect("timeout", self, "increase_age")
-	AgeTimer.set_wait_time(1)
+	AgeTimer.set_wait_time(60)
 	AgeTimer.set_active(false)
 	add_child(AgeTimer)
 
@@ -67,17 +69,17 @@ func increase_age():
 	age = age + 1
 
 func decrease_hunger():
-	if (hunger == 1):
+	if (hunger == 0):
 		return
 	hunger = hunger - 1
 
 func decrease_hygiene():
-	if (hygiene == 1):
+	if (hygiene == 0):
 		return
 	hygiene = hygiene - 1
 
 func decrease_happiness():
-	if (happiness == 1):
+	if (happiness == 0):
 		return
 	happiness = happiness - 1
 
@@ -85,21 +87,27 @@ func feed_pet(type):
 	if (hunger == 10):
 		return
 	if (type == "snack"):
+		if (GlobalState.get_intensity() < 2):
+			return
 		hunger = hunger + 1;
 		GlobalState.decrease_intensity(1)
 	elif (type == "meal" and hunger <= 8):
+		if (GlobalState.get_intensity() < 3):
+			return
 		hunger = hunger + 2
 		GlobalState.decrease_intensity(2)
 
-func bathe_pet():
-	if (hygiene == 10):
+func bath_pet():
+	if (hygiene == 10 or GlobalState.get_intensity() < 6):
 		return
 	hygiene = hygiene + 1
+	GlobalState.decrease_intensity(5)
 
 func entertain_pet():
-	if (happiness == 10):
+	if (happiness == 10 or GlobalState.get_intensity() < 3):
 		return
 	happiness = happiness + 1
+	GlobalState.decrease_intensity(2)
 
 func is_healthy():
 	 var health = hunger + hygiene + happiness

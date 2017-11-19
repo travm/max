@@ -50,6 +50,7 @@ func increase_intensity():
 
 func decrease_intensity(amount):
 	intensity = intensity - amount
+	intensity_cost = intensity_cost - (amount * 10)
 
 func start_timer():
 	IncrementalTimer.set_active(true)
