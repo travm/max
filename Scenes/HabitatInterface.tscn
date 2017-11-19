@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Scripts/HabitatInterface.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/habitat.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Pet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/nine-slice.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/PetMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PetStats.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,8 +16,21 @@ extents = Vector2( 16, 32 )
 
 script/script = ExtResource( 1 )
 
+[node name="Background" type="ColorFrame" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 480.0
+margin/bottom = 320.0
+color = Color( 0.964706, 0.839216, 0.741176, 1 )
+
 [node name="Backdrop" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 240, 160 )
 texture = ExtResource( 2 )
 
@@ -68,6 +83,7 @@ _update_shape_index = 0
 
 [node name="Patch9Frame" type="Patch9Frame" parent="."]
 
+visibility/visible = false
 rect/scale = Vector2( 6, 6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -82,5 +98,14 @@ patch_margin/left = 6
 patch_margin/top = 6
 patch_margin/right = 6
 patch_margin/bottom = 6
+
+[node name="PetMenu" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 304, 64 )
+
+[node name="PetStats" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 16, 16 )
+transform/scale = Vector2( 2, 2 )
 
 

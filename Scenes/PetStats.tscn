@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://Sprites/tileset.png" type="Texture" id=1]
+
+[node name="PetStats" type="Node2D"]
+
+[node name="HungerIcon" type="Sprite" parent="."]
+
+transform/pos = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 80, 96, 16, 16 )
+
+[node name="HungerBar" type="ColorFrame" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 4.0
+margin/right = 60.0
+margin/bottom = 12.0
+color = Color( 0.505882, 0.384314, 0.443137, 1 )
+
+[node name="Level" type="ColorFrame" parent="HungerBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 8.0
+color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[node name="HygieneIcon" type="Sprite" parent="."]
+
+transform/pos = Vector2( 88, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 80, 112, 16, 16 )
+
+[node name="HygieneBar" type="ColorFrame" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 4.0
+margin/right = 140.0
+margin/bottom = 12.0
+color = Color( 0.505882, 0.384314, 0.443137, 1 )
+
+[node name="Level" type="ColorFrame" parent="HygieneBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 8.0
+color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+[node name="HappinessIcon" type="Sprite" parent="."]
+
+transform/pos = Vector2( 168, 8 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 80, 128, 16, 16 )
+
+[node name="HappinessBar" type="ColorFrame" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 180.0
+margin/top = 4.0
+margin/right = 220.0
+margin/bottom = 12.0
+color = Color( 0.505882, 0.384314, 0.443137, 1 )
+
+[node name="Level" type="ColorFrame" parent="HappinessBar"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 8.0
+color = Color( 0.12549, 0.223529, 0.309804, 1 )
+
+

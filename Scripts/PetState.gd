@@ -65,7 +65,6 @@ func decrease_stats():
 
 func increase_age():
 	age = age + 1
-	print(age)
 
 func decrease_hunger():
 	if (hunger == 1):
