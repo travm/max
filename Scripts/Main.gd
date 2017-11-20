@@ -8,8 +8,9 @@ func _ready():
 	GlobalState = get_node("/root/GlobalState")
 	Player = get_node("Player")
 
-	# Set Player Position
-	Player.set_pos(GlobalState.player_pos)
+	# Set Initial Player Position & Rotation
+	Player.set_pos(GlobalState.get_player_pos())
+	Player.RayCast.set_rotd(GlobalState.get_player_rotd())
 
 	# Start Global Timer
 	if (GlobalState.is_timer_active()):

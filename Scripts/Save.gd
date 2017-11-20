@@ -22,7 +22,8 @@ func save_game():
 			player_pos = {
 				x = GlobalState.get_player_pos().x,
 				y = GlobalState.get_player_pos().y
-			}
+			},
+			player_rotd = GlobalState.get_player_rotd()
 		},
 		PetState = {
 			age = PetState.get_age(),
@@ -49,12 +50,15 @@ func load_game():
 	save_file.open(SAVE_PATH, File.READ)
 	data.parse_json(save_file.get_as_text())
 
+	print(data["GlobalState"]["player_rotd"])
+
 	# Update Global Properties
 	GlobalState.set_units(data["GlobalState"]["units"])
 	GlobalState.set_intensity(data["GlobalState"]["intensity"])
 	GlobalState.set_intensity_cost(data["GlobalState"]["intensity_cost"])
 	GlobalState.set_wait_time(data["GlobalState"]["wait_time"])
 	GlobalState.set_player_pos(Vector2(data["GlobalState"]["player_pos"]["x"], data["GlobalState"]["player_pos"]["y"]))
+	GlobalState.set_player_rotd(data["GlobalState"]["player_rotd"])
 
 	# Update PetState Properties
 	PetState.set_age(data["PetState"]["age"])

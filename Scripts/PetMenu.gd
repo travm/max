@@ -20,14 +20,12 @@ func _input(event):
 		if (selectPosition == 0):
 			return
 		selectPosition = selectPosition - 1
-		print(selectPosition)
 		move_selector(selectPosition)
 
 	if (event.is_action_pressed("ui_right")):
 		if (selectPosition == 3):
 			return
 		selectPosition = selectPosition + 1
-		print(selectPosition)
 		move_selector(selectPosition)
 
 func move_selector(position):

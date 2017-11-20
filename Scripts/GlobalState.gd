@@ -13,6 +13,7 @@ var intensity = 1
 var intensity_cost = 50
 var wait_time = 1
 var player_pos = Vector2(240, 160)
+var player_rotd = 0
 
 func _ready():
 	# Incrementing Timer
@@ -93,3 +94,9 @@ func get_player_pos():
 
 func set_player_pos(value):
 	player_pos = value
+
+func get_player_rotd():
+	return player_rotd
+
+func set_player_rotd(value):
+	player_rotd = value

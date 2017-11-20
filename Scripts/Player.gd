@@ -77,5 +77,6 @@ func _fixed_process(delta):
 		velocity = n.slide(velocity)
 		move(motion)
 
-	# Set Player Position In Global
+	# Set Player Position & Rotation In Global
 	GlobalState.set_player_pos(get_pos())
+	GlobalState.set_player_rotd(RayCast.get_rotd())

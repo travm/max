@@ -14,8 +14,6 @@ var evolution = 1
 func _ready():
 	set_process(true)
 
-	print(hunger)
-
 	GlobalState = get_node("/root/GlobalState")
 
 	# Add Timer To Decrease Stats Over Timer
