@@ -19,7 +19,7 @@ func _ready():
 	# Add Timer To Decrease Stats Over Timer
 	StatsTimer = Timer.new()
 	StatsTimer.connect("timeout", self, "decrease_stats")
-	StatsTimer.set_wait_time(30)
+	StatsTimer.set_wait_time(60)
 	StatsTimer.set_active(false)
 	add_child(StatsTimer)
 
