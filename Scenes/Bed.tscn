@@ -42,4 +42,6 @@ cast_to = Vector2( 0, 16 )
 layer_mask = 1
 type_mask = 15
 
+[node name="Save Indicator" type="Sprite" parent="."]
+
 
