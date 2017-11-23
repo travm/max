@@ -24,7 +24,7 @@ bounce = 0.0
 
 texture = ExtResource( 1 )
 region = true
-region_rect = Rect2( 0, 96, 32, 16 )
+region_rect = Rect2( 0, 144, 32, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

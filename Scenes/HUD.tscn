@@ -25,7 +25,7 @@ transform/pos = Vector2( 135, 296 )
 transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 0, 144, 90, 16 )
+region_rect = Rect2( 0, 192, 90, 16 )
 
 [node name="Units" type="Label" parent="."]
 

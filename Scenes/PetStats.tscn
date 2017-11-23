@@ -12,7 +12,7 @@ script/script = ExtResource( 1 )
 transform/pos = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 80, 96, 16, 16 )
+region_rect = Rect2( 80, 144, 16, 16 )
 
 [node name="HungerBar" type="ColorFrame" parent="."]
 
@@ -43,7 +43,7 @@ color = Color( 0.12549, 0.223529, 0.309804, 1 )
 transform/pos = Vector2( 88, 8 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 80, 112, 16, 16 )
+region_rect = Rect2( 80, 160, 16, 16 )
 
 [node name="HygieneBar" type="ColorFrame" parent="."]
 
@@ -75,7 +75,7 @@ color = Color( 0.12549, 0.223529, 0.309804, 1 )
 transform/pos = Vector2( 168, 8 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 80, 128, 16, 16 )
+region_rect = Rect2( 80, 176, 16, 16 )
 
 [node name="HappinessBar" type="ColorFrame" parent="."]
 
