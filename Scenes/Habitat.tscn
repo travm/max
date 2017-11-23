@@ -33,13 +33,13 @@ _update_shape_index = 0
 
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 16, 80, 16, 16 )
+region_rect = Rect2( 16, 128, 16, 16 )
 
 [node name="Terrarium" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 80, 80, 16, 16 )
+region_rect = Rect2( 80, 128, 16, 16 )
 
 [node name="Bubble" type="Sprite" parent="."]
 
@@ -47,7 +47,7 @@ editor/display_folded = true
 transform/pos = Vector2( 0, -9.40147 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 64, 64, 16, 16 )
+region_rect = Rect2( 64, 112, 16, 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bubble"]
 
