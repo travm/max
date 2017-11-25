@@ -8,7 +8,7 @@ func _ready():
 	set_process(true)
 	set_process_input(true)
 	GlobalState = get_node("/root/GlobalState")
-	Bubble = get_node("Bubble")
+	Bubble = get_node("BubbleContainer/Bubble")
 	RayCast = get_node("RayCast2D")
 
 func _input(event):

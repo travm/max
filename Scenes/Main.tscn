@@ -74,7 +74,7 @@ transform/pos = Vector2( 232, 116 )
 
 [node name="Computer" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 200, 116 )
+transform/pos = Vector2( 194, 116 )
 
 [node name="Habitat" parent="." instance=ExtResource( 5 )]
 
