@@ -37,6 +37,7 @@ _update_shape_index = 0
 
 [node name="SaveSprite" type="Sprite" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, -10.7659 )
 texture = ExtResource( 2 )
 region = true
