@@ -6,7 +6,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 48
+font/size = 32
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 3 )
@@ -19,10 +19,10 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 script/script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Bar" type="Sprite" parent="."]
 
-transform/pos = Vector2( 135, 296 )
-transform/scale = Vector2( 3, 3 )
+transform/pos = Vector2( 90, 304 )
+transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 0, 192, 90, 16 )
@@ -33,9 +33,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 14.0
-margin/top = 272.0
-margin/right = 160.0
+margin/left = 28.0
+margin/top = 287.0
+margin/right = 112.0
 margin/bottom = 319.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0588235, 0.164706, 0.247059, 1 )
@@ -52,10 +52,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 192.0
-margin/top = 272.0
-margin/right = 257.0
-margin/bottom = 320.0
+margin/left = 109.0
+margin/top = 287.0
+margin/right = 174.0
+margin/bottom = 319.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0588235, 0.164706, 0.247059, 1 )
 text = "0"
@@ -64,5 +64,19 @@ valign = 3
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="UnitsIcon" type="Sprite" parent="."]
+
+transform/pos = Vector2( 16, 304 )
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 96, 160, 16, 16 )
+
+[node name="IntensityIcon" type="Sprite" parent="."]
+
+transform/pos = Vector2( 135, 304 )
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 112, 160, 16, 16 )
 
 
