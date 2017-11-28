@@ -7,6 +7,7 @@ var hurtSample = preload("res://Audio/hurt.smp")
 var IncrementalTimer
 var Library
 var Sound
+var PauseMenu
 
 var units = 0
 var intensity = 1

@@ -70,19 +70,19 @@ tile_data = IntArray( 393227, 23, 393229, 22, 393231, 23, 589836, 24, 589837, 26
 
 [node name="Couch" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 232, 116 )
+transform/pos = Vector2( 232, 112 )
 
 [node name="Computer" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 194, 116 )
+transform/pos = Vector2( 194, 112 )
 
 [node name="Habitat" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 264, 116 )
+transform/pos = Vector2( 263, 112 )
 
 [node name="Bed" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 314, 124 )
+transform/pos = Vector2( 311, 124 )
 
 [node name="Lamp" parent="." instance=ExtResource( 7 )]
 

@@ -24,7 +24,7 @@ func _ready():
 		PetState.start_timers()
 
 func _input(event):
-	if (event.is_action_pressed("ui_cancel")):
+	if (event.is_action_pressed("ui_start")):
 		get_tree().change_scene("res://Scenes/Title.tscn")
 
 	if (event.is_action_pressed("ui_select")):
