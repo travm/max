@@ -39,7 +39,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 304, 160 ), Vector2( 176, 160 ) ]
+"values": [ Vector2( -32, -38 ), Vector2( -96, -38 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -56,7 +56,7 @@ tracks/0/keys = {
 "times": FloatArray( 0, 8 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 240, 160 ), Vector2( 176, 160 ) ]
+"values": [ Vector2( -48, -84 ), Vector2( -432, -84 ) ]
 }
 
 [sub_resource type="DynamicFont" id=4]
@@ -117,9 +117,9 @@ autoplay = "Rise"
 
 [node name="Clouds Back" type="Sprite" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 209.422, 160 )
+transform/pos = Vector2( -96, -38 )
 texture = ExtResource( 3 )
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Clouds Back"]
 
@@ -134,9 +134,9 @@ autoplay = "Move"
 
 [node name="Clouds Front" type="Sprite" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 176, 160 )
+transform/pos = Vector2( -432, -84 )
 texture = ExtResource( 4 )
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Clouds Front"]
 
