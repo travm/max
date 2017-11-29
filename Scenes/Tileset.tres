@@ -7,15 +7,25 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 16 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 16 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
@@ -30,19 +40,9 @@ extents = Vector2( 8, 10 )
 [sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 10 )
-
-[sub_resource type="RectangleShape2D" id=9]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 10 )
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
@@ -101,7 +101,7 @@ extents = Vector2( 8, 8 )
 4/occluder_offset = Vector2( 3, 8 )
 4/navigation_offset = Vector2( 3, 8 )
 4/shape_offset = Vector2( 3, 8 )
-4/shapes = [ SubResource( 2 ) ]
+4/shapes = [ SubResource( 3 ) ]
 4/one_way_collision_direction = Vector2( 0, 0 )
 4/one_way_collision_max_depth = 0.0
 5/name = "Wall (Corner Left Upper)"
@@ -112,7 +112,7 @@ extents = Vector2( 8, 8 )
 5/occluder_offset = Vector2( 8, 8 )
 5/navigation_offset = Vector2( 8, 8 )
 5/shape_offset = Vector2( 8, 8 )
-5/shapes = [ SubResource( 3 ) ]
+5/shapes = [ SubResource( 8 ) ]
 5/one_way_collision_direction = Vector2( 0, 0 )
 5/one_way_collision_max_depth = 0.0
 6/name = "Wall (Corner Right Upper)"
@@ -123,7 +123,7 @@ extents = Vector2( 8, 8 )
 6/occluder_offset = Vector2( 8, 8 )
 6/navigation_offset = Vector2( 8, 8 )
 6/shape_offset = Vector2( 8, 8 )
-6/shapes = [ SubResource( 4 ) ]
+6/shapes = [ SubResource( 9 ) ]
 6/one_way_collision_direction = Vector2( 0, 0 )
 6/one_way_collision_max_depth = 0.0
 7/name = "Wall (Middle Right Upper)"
@@ -134,7 +134,7 @@ extents = Vector2( 8, 8 )
 7/occluder_offset = Vector2( 13, 8 )
 7/navigation_offset = Vector2( 13, 8 )
 7/shape_offset = Vector2( 13, 8 )
-7/shapes = [ SubResource( 2 ) ]
+7/shapes = [ SubResource( 3 ) ]
 7/one_way_collision_direction = Vector2( 0, 0 )
 7/one_way_collision_max_depth = 0.0
 8/name = "Wall (Middle Left Middle)"
@@ -145,7 +145,7 @@ extents = Vector2( 8, 8 )
 8/occluder_offset = Vector2( 3, 8 )
 8/navigation_offset = Vector2( 3, 8 )
 8/shape_offset = Vector2( 3, 8 )
-8/shapes = [ SubResource( 2 ) ]
+8/shapes = [ SubResource( 3 ) ]
 8/one_way_collision_direction = Vector2( 0, 0 )
 8/one_way_collision_max_depth = 0.0
 9/name = "Wall (Corner Left Lower)"
@@ -156,7 +156,7 @@ extents = Vector2( 8, 8 )
 9/occluder_offset = Vector2( 8, 16 )
 9/navigation_offset = Vector2( 8, 16 )
 9/shape_offset = Vector2( 8, 16 )
-9/shapes = [ SubResource( 5 ) ]
+9/shapes = [ SubResource( 2 ) ]
 9/one_way_collision_direction = Vector2( 0, 0 )
 9/one_way_collision_max_depth = 0.0
 10/name = "Wall (Corner Right Lower)"
@@ -167,7 +167,7 @@ extents = Vector2( 8, 8 )
 10/occluder_offset = Vector2( 8, 16 )
 10/navigation_offset = Vector2( 8, 16 )
 10/shape_offset = Vector2( 8, 16 )
-10/shapes = [ SubResource( 5 ) ]
+10/shapes = [ SubResource( 2 ) ]
 10/one_way_collision_direction = Vector2( 0, 0 )
 10/one_way_collision_max_depth = 0.0
 11/name = "Wall (Middle Right Middle)"
@@ -178,7 +178,7 @@ extents = Vector2( 8, 8 )
 11/occluder_offset = Vector2( 13, 8 )
 11/navigation_offset = Vector2( 13, 8 )
 11/shape_offset = Vector2( 13, 8 )
-11/shapes = [ SubResource( 2 ) ]
+11/shapes = [ SubResource( 3 ) ]
 11/one_way_collision_direction = Vector2( 0, 0 )
 11/one_way_collision_max_depth = 0.0
 12/name = "Wall (Middle Left Lower)"
@@ -189,7 +189,7 @@ extents = Vector2( 8, 8 )
 12/occluder_offset = Vector2( 3, 8 )
 12/navigation_offset = Vector2( 3, 8 )
 12/shape_offset = Vector2( 3, 8 )
-12/shapes = [ SubResource( 2 ) ]
+12/shapes = [ SubResource( 3 ) ]
 12/one_way_collision_direction = Vector2( 0, 0 )
 12/one_way_collision_max_depth = 0.0
 13/name = "Wall (Middle Right Lower)"
@@ -200,7 +200,7 @@ extents = Vector2( 8, 8 )
 13/occluder_offset = Vector2( 13, 8 )
 13/navigation_offset = Vector2( 13, 8 )
 13/shape_offset = Vector2( 13, 8 )
-13/shapes = [ SubResource( 2 ) ]
+13/shapes = [ SubResource( 3 ) ]
 13/one_way_collision_direction = Vector2( 0, 0 )
 13/one_way_collision_max_depth = 0.0
 14/name = "Wall (Bottom Left)"
@@ -211,7 +211,7 @@ extents = Vector2( 8, 8 )
 14/occluder_offset = Vector2( 8, 22 )
 14/navigation_offset = Vector2( 8, 22 )
 14/shape_offset = Vector2( 8, 22 )
-14/shapes = [ SubResource( 6 ) ]
+14/shapes = [ SubResource( 4 ) ]
 14/one_way_collision_direction = Vector2( 0, 0 )
 14/one_way_collision_max_depth = 0.0
 15/name = "Wall (Bottom Middle Left)"
@@ -222,7 +222,7 @@ extents = Vector2( 8, 8 )
 15/occluder_offset = Vector2( 8, 22 )
 15/navigation_offset = Vector2( 8, 22 )
 15/shape_offset = Vector2( 8, 22 )
-15/shapes = [ SubResource( 7 ) ]
+15/shapes = [ SubResource( 5 ) ]
 15/one_way_collision_direction = Vector2( 0, 0 )
 15/one_way_collision_max_depth = 0.0
 16/name = "Wall (Bottom Middle Right)"
@@ -233,7 +233,7 @@ extents = Vector2( 8, 8 )
 16/occluder_offset = Vector2( 8, 22 )
 16/navigation_offset = Vector2( 8, 22 )
 16/shape_offset = Vector2( 8, 22 )
-16/shapes = [ SubResource( 8 ) ]
+16/shapes = [ SubResource( 6 ) ]
 16/one_way_collision_direction = Vector2( 0, 0 )
 16/one_way_collision_max_depth = 0.0
 17/name = "Wall (Bottom Right)"
@@ -244,7 +244,7 @@ extents = Vector2( 8, 8 )
 17/occluder_offset = Vector2( 8, 22 )
 17/navigation_offset = Vector2( 8, 22 )
 17/shape_offset = Vector2( 8, 22 )
-17/shapes = [ SubResource( 9 ) ]
+17/shapes = [ SubResource( 7 ) ]
 17/one_way_collision_direction = Vector2( 0, 0 )
 17/one_way_collision_max_depth = 0.0
 18/name = "Ceiling"

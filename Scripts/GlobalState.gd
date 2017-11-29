@@ -1,12 +1,8 @@
 extends Node
 
-var tickSample = preload("res://Audio/tick.smp")
-var pickupSample = preload("res://Audio/pickup.smp")
-var hurtSample = preload("res://Audio/hurt.smp")
+var Audio
 
 var IncrementalTimer
-var Library
-var Sound
 var PauseMenu
 
 var units = 0
@@ -17,6 +13,8 @@ var player_pos = Vector2(240, 160)
 var player_rotd = 0
 
 func _ready():
+	Audio = get_node("/root/Audio")
+
 	# Incrementing Timer
 	IncrementalTimer = Timer.new()
 	IncrementalTimer.connect("timeout", self, "increase_units")
@@ -24,18 +22,9 @@ func _ready():
 	IncrementalTimer.set_active(false)
 	add_child(IncrementalTimer)
 
-	# Add Audio Samples
-	Library = SampleLibrary.new()
-	Library.add_sample("tick", tickSample)
-	Library.add_sample("pickup", pickupSample)
-	Library.add_sample("hurt", hurtSample)
-	Sound = SamplePlayer.new()
-	Sound.set_polyphony(2)
-	Sound.set_sample_library(Library)
-
 # Methods
 func increase_units():
-	Sound.play("tick")
+	Audio.play_sound("tick");
 	units = units + intensity
 
 func decrease_units(amount):
@@ -43,12 +32,12 @@ func decrease_units(amount):
 
 func increase_intensity():
 	if (units >= intensity_cost):
-		Sound.play("pickup")
+		Audio.play_sound("pickup")
 		units = units - intensity_cost
 		intensity = intensity + 1
 		intensity_cost = intensity_cost + 10
 	else:
-		Sound.play("hurt")
+		Audio.play_sound("hurt")
 
 func decrease_intensity(amount):
 	intensity = intensity - amount

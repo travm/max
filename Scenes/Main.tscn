@@ -86,7 +86,7 @@ transform/pos = Vector2( 311, 124 )
 
 [node name="Lamp" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 283, 105 )
+transform/pos = Vector2( 283, 104 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 
