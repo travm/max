@@ -3,12 +3,23 @@ extends Node
 var GlobalState
 var PetState
 
+var ResetTimer
+
 const SAVE_PATH = "res://save.json"
-var _settings = {}
+var recently_saved = false
 
 func _ready():
 	GlobalState = get_node("/root/GlobalState")
 	PetState = get_node("/root/PetState")
+
+	# Timer To Reset Recently Saved Trigger
+	ResetTimer = Timer.new()
+	ResetTimer.connect("timeout", self, "reset_recently_saved")
+	ResetTimer.set_wait_time(2)
+	ResetTimer.set_one_shot(true)
+	add_child(ResetTimer)
+
+	# Initial Load
 	load_game()
 
 func save_game():
@@ -39,6 +50,11 @@ func save_game():
 	save_file.store_line(save_dict.to_json())
 	save_file.close()
 
+	# Toggle Recently Saved Flag
+	set_recently_saved(true);
+	ResetTimer.start();
+
+
 func load_game():
 	var save_file = File.new()
 	var data = {}
@@ -66,5 +82,16 @@ func load_game():
 	PetState.set_hygiene(data["PetState"]["hygiene"])
 	PetState.set_happiness(data["PetState"]["happiness"])
 	PetState.set_evolution(data["PetState"]["evolution"])
+
+func get_recently_saved():
+	return recently_saved
+
+func set_recently_saved(value):
+	recently_saved = value
+
+func reset_recently_saved():
+	set_recently_saved(false)
+
+
 
 
