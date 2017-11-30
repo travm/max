@@ -36,13 +36,13 @@ texture = ExtResource( 2 )
 
 [node name="Pet" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 256, 173 )
+transform/pos = Vector2( 256, 128 )
 transform/scale = Vector2( 8, 8 )
 
 [node name="Wall Left" type="StaticBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 0, -35 )
+transform/pos = Vector2( 0, -80 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 112, 240 )
@@ -64,7 +64,7 @@ _update_shape_index = 0
 [node name="Wall Right" type="StaticBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 0, -35 )
+transform/pos = Vector2( 0, -80 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 368, 240 )

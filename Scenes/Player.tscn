@@ -160,7 +160,7 @@ visibility/opacity = 0.25
 transform/pos = Vector2( 0, 6 )
 texture = ExtResource( 2 )
 region = true
-region_rect = Rect2( 96, 64, 16, 16 )
+region_rect = Rect2( 96, 112, 16, 16 )
 
 [node name="Sprite" type="Sprite" parent="."]
 

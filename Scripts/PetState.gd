@@ -11,6 +11,10 @@ var hunger = 10
 var hygiene = 10
 var happiness = 10
 var evolution = 1
+var snack_cost = 1
+var meal_cost = 2
+var bath_cost = 5
+var entertain_cost = 2
 
 func _ready():
 	set_process(true)
@@ -93,14 +97,14 @@ func feed_pet(type):
 			return
 		hunger = hunger + 1;
 		Audio.play_sound("pickup")
-		GlobalState.decrease_intensity(1)
+		GlobalState.decrease_intensity(snack_cost)
 	elif (type == "meal"):
 		if (hunger > 8 or GlobalState.get_intensity() < 3):
 			Audio.play_sound("hurt")
 			return
 		hunger = hunger + 2
 		Audio.play_sound("pickup")
-		GlobalState.decrease_intensity(2)
+		GlobalState.decrease_intensity(meal_cost)
 
 func bath_pet():
 	if (hygiene == 10 or GlobalState.get_intensity() < 6):
@@ -108,7 +112,7 @@ func bath_pet():
 		return
 	hygiene = hygiene + 1
 	Audio.play_sound("pickup")
-	GlobalState.decrease_intensity(5)
+	GlobalState.decrease_intensity(bath_cost)
 
 func entertain_pet():
 	if (happiness == 10 or GlobalState.get_intensity() < 3):
@@ -116,7 +120,7 @@ func entertain_pet():
 		return
 	happiness = happiness + 1
 	Audio.play_sound("pickup")
-	GlobalState.decrease_intensity(2)
+	GlobalState.decrease_intensity(entertain_cost)
 
 func is_healthy():
 	 var health = hunger + hygiene + happiness
@@ -156,3 +160,27 @@ func get_evolution():
 
 func set_evolution(value):
 	evolution = value
+
+func get_snack_cost():
+	return snack_cost
+
+func set_snack_cost(value):
+	snack_cost = value
+
+func get_meal_cost():
+	return meal_cost
+
+func set_meal_cost(value):
+	meal_cost = value
+
+func get_bath_cost():
+	return bath_cost
+
+func set_bath_cost(value):
+	bath_cost = value
+
+func get_entertain_cost():
+	return entertain_cost
+
+func set_entertain_cost(value):
+	entertain_cost = value
