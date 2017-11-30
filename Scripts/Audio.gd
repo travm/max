@@ -1,9 +1,9 @@
 extends Node
 
-var tickSample = preload("res://Audio/tick.smp")
-var pickupSample = preload("res://Audio/pickup.smp")
-var hurtSample = preload("res://Audio/hurt.smp")
-var backgroundMusic = preload("res://Audio/music.ogg")
+var tick_sample = preload("res://Audio/tick.smp")
+var pickup_sample = preload("res://Audio/pickup.smp")
+var hurt_sample = preload("res://Audio/hurt.smp")
+var background_music = preload("res://Audio/music.ogg")
 
 var Library
 var SoundPlayer
@@ -14,18 +14,19 @@ func _ready():
 
 	# Build Sample Library
 	Library = SampleLibrary.new()
-	Library.add_sample("tick", tickSample)
-	Library.add_sample("pickup", pickupSample)
-	Library.add_sample("hurt", hurtSample)
+	Library.add_sample("tick", tick_sample)
+	Library.add_sample("pickup", pickup_sample)
+	Library.add_sample("hurt", hurt_sample)
 
 	# Initialize Sample Player
 	SoundPlayer = SamplePlayer.new()
 	SoundPlayer.set_polyphony(4)
+	SoundPlayer.set_default_volume(0.25)
 	SoundPlayer.set_sample_library(Library)
 
 	# Initialize Stream Player
 	MusicPlayer = StreamPlayer.new()
-	MusicPlayer.set_stream(backgroundMusic)
+	MusicPlayer.set_stream(background_music)
 	MusicPlayer.set_loop(true)
 	add_child(MusicPlayer)
 	MusicPlayer.play()

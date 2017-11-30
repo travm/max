@@ -4,7 +4,7 @@ var PetState
 
 var SelectLabel
 
-var selectPosition = 0
+var select_position = 0
 
 func _ready():
 	set_process_input(true)
@@ -13,20 +13,20 @@ func _ready():
 
 func _input(event):
 	if (event.is_action_pressed("ui_accept")):
-		perform_action(selectPosition)
+		perform_action(select_position)
 		pass
 
 	if (event.is_action_pressed("ui_left")):
-		if (selectPosition == 0):
+		if (select_position == 0):
 			return
-		selectPosition = selectPosition - 1
-		move_selector(selectPosition)
+		select_position = select_position - 1
+		move_selector(select_position)
 
 	if (event.is_action_pressed("ui_right")):
-		if (selectPosition == 3):
+		if (select_position == 3):
 			return
-		selectPosition = selectPosition + 1
-		move_selector(selectPosition)
+		select_position = select_position + 1
+		move_selector(select_position)
 
 func move_selector(position):
 	if (position == 0):

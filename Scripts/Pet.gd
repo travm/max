@@ -6,7 +6,7 @@ var Sprite
 var Timer
 
 export var speed = 50
-var newDirection = Vector2(0, 0)
+var new_direction = Vector2(0, 0)
 
 func _ready():
 	set_process(true)
@@ -31,13 +31,13 @@ func _fixed_process(delta):
 	var motion
 	var direction = Vector2(0, 0)
 
-	direction += newDirection
+	direction += new_direction
 
 	motion = direction.normalized() * speed * delta
 	motion = move(motion)
 
 func set_direction():
-	newDirection = Vector2(range(-1, 2)[randi() % 3], 0)
+	new_direction = Vector2(range(-1, 2)[randi() % 3], 0)
 
 func get_texture(evolution):
 	if (evolution == 1):

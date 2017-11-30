@@ -1,5 +1,6 @@
 extends Node
 
+var Audio
 var GlobalState
 
 var AgeTimer
@@ -14,6 +15,7 @@ var evolution = 1
 func _ready():
 	set_process(true)
 
+	Audio = get_node("/root/Audio")
 	GlobalState = get_node("/root/GlobalState")
 
 	# Add Timer To Decrease Stats Over Timer
@@ -83,28 +85,37 @@ func decrease_happiness():
 
 func feed_pet(type):
 	if (hunger == 10):
+		Audio.play_sound("hurt")
 		return
 	if (type == "snack"):
 		if (GlobalState.get_intensity() < 2):
+			Audio.play_sound("hurt")
 			return
 		hunger = hunger + 1;
+		Audio.play_sound("pickup")
 		GlobalState.decrease_intensity(1)
-	elif (type == "meal" and hunger <= 8):
-		if (GlobalState.get_intensity() < 3):
+	elif (type == "meal"):
+		if (hunger > 8 or GlobalState.get_intensity() < 3):
+			Audio.play_sound("hurt")
 			return
 		hunger = hunger + 2
+		Audio.play_sound("pickup")
 		GlobalState.decrease_intensity(2)
 
 func bath_pet():
 	if (hygiene == 10 or GlobalState.get_intensity() < 6):
+		Audio.play_sound("hurt")
 		return
 	hygiene = hygiene + 1
+	Audio.play_sound("pickup")
 	GlobalState.decrease_intensity(5)
 
 func entertain_pet():
 	if (happiness == 10 or GlobalState.get_intensity() < 3):
+		Audio.play_sound("hurt")
 		return
 	happiness = happiness + 1
+	Audio.play_sound("pickup")
 	GlobalState.decrease_intensity(2)
 
 func is_healthy():

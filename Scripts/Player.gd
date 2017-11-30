@@ -7,7 +7,7 @@ var RayCast
 
 export var speed = 50
 var animation = ""
-var lastAnimation = ""
+var last_animation = ""
 
 func _ready():
 	set_fixed_process(true)
@@ -53,9 +53,9 @@ func _fixed_process(delta):
 		if (Input.is_action_pressed("ui_down")):
 			animation = "Down"
 
-	if (animation != lastAnimation):
-		lastAnimation = animation
-		AnimationPlayer.play(lastAnimation)
+	if (animation != last_animation):
+		last_animation = animation
+		AnimationPlayer.play(last_animation)
 
 	# Sprint Control
 	if (Input.is_action_pressed("ui_sprint")):
