@@ -1,5 +1,7 @@
 # Max
 
+[Website](https://travm.itch.io/max)
+
 Max is an experimental mashup of incremental games and the virtual pet craze of the 90s. It was created as part of the Github Game Off 2017 game jam with the theme of "throwback".
 
 The game features a single room that acts as a hub for your interactions with both your pet and the computer that you are using to mine units. Units are the base currency of the game and are mined automatically every second. Additionally, you can also generate units via manual input if you need them in a hurry.
