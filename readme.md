@@ -1,4 +1,4 @@
-# Max Preview ⬆
+# Max ⬆
 
 [Website](https://travm.itch.io/max)
 
