@@ -38,6 +38,7 @@ func save_game():
 		},
 		PetState = {
 			age = PetState.get_age(),
+			health = PetState.get_health(),
 			hunger = PetState.get_hunger(),
 			hygiene = PetState.get_hygiene(),
 			happiness = PetState.get_happiness(),
@@ -78,6 +79,7 @@ func load_game():
 
 	# Update PetState Properties
 	PetState.set_age(data["PetState"]["age"])
+	PetState.set_health(data["PetState"]["health"])
 	PetState.set_hunger(data["PetState"]["hunger"])
 	PetState.set_hygiene(data["PetState"]["hygiene"])
 	PetState.set_happiness(data["PetState"]["happiness"])

@@ -25,6 +25,10 @@ func _ready():
 
 
 func _input(event):
+	# Prevent Input If Pet Is Dead
+	if (PetState.get_evolution() == 0):
+		return
+
 	if (event.is_action_pressed("ui_accept")):
 		perform_action(select_position)
 		pass

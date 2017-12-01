@@ -28,6 +28,10 @@ func _process(delta):
 	Sprite.set_texture(load(get_texture(PetState.get_evolution())))
 
 func _fixed_process(delta):
+	# Prevent Movement If Pet Is Dead
+	if (PetState.get_evolution() == 0):
+		return
+
 	var motion
 	var direction = Vector2(0, 0)
 
@@ -40,7 +44,9 @@ func set_direction():
 	new_direction = Vector2(range(-1, 2)[randi() % 3], 0)
 
 func get_texture(evolution):
-	if (evolution == 1):
+	if (evolution == 0):
+		return "res://Sprites/pet-dead.png"
+	elif (evolution == 1):
 		return "res://Sprites/pet-infant.png"
 	elif (evolution == 2):
 		return "res://Sprites/pet-child.png"
@@ -49,6 +55,8 @@ func get_texture(evolution):
 	elif (evolution == 4):
 		return "res://Sprites/pet-adult-one.png"
 	elif (evolution == 5):
+		return "res://Sprites/pet-adult-two.png"
+	elif (evolution == 6):
 		return "res://Sprites/pet-adult-two.png"
 	else:
 		return "res://Sprites/pet-infant.png"
