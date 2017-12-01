@@ -57,9 +57,6 @@ func get_texture(evolution):
 	elif (evolution == 5):
 		return "res://Sprites/pet-adult-two.png"
 	elif (evolution == 6):
-		return "res://Sprites/pet-adult-two.png"
+		return "res://Sprites/pet-isaac.png"
 	else:
 		return "res://Sprites/pet-infant.png"
-
-func change_mood(mood):
-	pass

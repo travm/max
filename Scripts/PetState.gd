@@ -27,7 +27,7 @@ func _ready():
 	# Add Timer To Age The Pet (1 Day = 60 Seconds)
 	AgeTimer = Timer.new()
 	AgeTimer.connect("timeout", self, "increase_age")
-	AgeTimer.set_wait_time(120)
+	AgeTimer.set_wait_time(60)
 	AgeTimer.set_active(false)
 	add_child(AgeTimer)
 
@@ -46,16 +46,7 @@ func _ready():
 	add_child(StatsTimer)
 
 func _process(delta):
-	# Check For Evolution
-	if (age == 5):
-		evolution = 2
-	if (age == 10):
-		evolution = 3
-	if (age == 20):
-		if (is_healthy()):
-			evolution = 4
-		else:
-			evolution = 5
+	update_evolution()
 
 # Methods
 func start_timers():
@@ -76,6 +67,19 @@ func stop_timers():
 
 func is_timer_active():
 	return StatsTimer.is_active() or AgeTimer.is_active()
+
+func update_evolution():
+	if (age == 5):
+		set_evolution(2)
+	if (age == 10):
+		set_evolution(3)
+	if (age == 20):
+		if (quality_of_life() == "good"):
+			evolution = 4
+		elif (quality_of_life() == "bad"):
+			evolution = 5
+		elif (quality_of_life() == "terrible"):
+			evolution = 6
 
 func update_health():
 	if (hunger == 0 and hygiene == 0 and happiness == 0):
@@ -162,13 +166,16 @@ func entertain_pet():
 	Audio.play_sound("pickup")
 	GlobalState.decrease_intensity(entertain_cost)
 
-func is_healthy():
-	 var health = hunger + hygiene + happiness
+func quality_of_life():
+	 var stat_total = hunger + hygiene + happiness
 
-	 if (health >= 15):
-	 	return true
-	 else:
-	 	return false
+	 if (stat_total >= 15):
+	 	return "good"
+	 elif (stat_total >= 1 and stat_total < 15):
+	 	return "bad"
+	 elif (stat_total == 0):
+	 	return "terrible"
+
 
 # Getters & Setters
 func get_age():

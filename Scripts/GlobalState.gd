@@ -5,7 +5,7 @@ var Audio
 var IncrementalTimer
 var PauseMenu
 
-var units = 0
+var units = 100000
 var intensity = 1
 var intensity_cost = 50
 var wait_time = 1
