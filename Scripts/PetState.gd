@@ -13,9 +13,9 @@ var hunger = 10
 var hygiene = 10
 var happiness = 10
 var evolution = 1
-var snack_cost = 4
+var snack_cost = 2
 var meal_cost = 4
-var bath_cost = 8
+var bath_cost = 4
 var entertain_cost = 2
 
 func _ready():
@@ -137,7 +137,6 @@ func feed_pet(type):
 			Audio.play_sound("hurt")
 			return
 		increase_hunger()
-		increase_happiness()
 		Audio.play_sound("pickup")
 		GlobalState.decrease_intensity(snack_cost)
 	elif (type == "meal"):
