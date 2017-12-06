@@ -3,7 +3,7 @@ extends Node
 var GlobalState
 var PetState
 
-var ResetTimer
+var ResetRecentlySavedTimer
 
 const SAVE_PATH = "res://save.json"
 var recently_saved = false
@@ -13,11 +13,11 @@ func _ready():
 	PetState = get_node("/root/PetState")
 
 	# Timer To Reset Recently Saved Trigger
-	ResetTimer = Timer.new()
-	ResetTimer.connect("timeout", self, "reset_recently_saved")
-	ResetTimer.set_wait_time(2)
-	ResetTimer.set_one_shot(true)
-	add_child(ResetTimer)
+	ResetRecentlySavedTimer = Timer.new()
+	ResetRecentlySavedTimer.connect("timeout", self, "reset_recently_saved")
+	ResetRecentlySavedTimer.set_wait_time(2)
+	ResetRecentlySavedTimer.set_one_shot(true)
+	add_child(ResetRecentlySavedTimer)
 
 	# Initial Load
 	load_game()
@@ -30,11 +30,11 @@ func save_game():
 			intensity = GlobalState.get_intensity(),
 			intensity_cost = GlobalState.get_intensity_cost(),
 			wait_time = GlobalState.get_wait_time(),
-			player_pos = {
-				x = GlobalState.get_player_pos().x,
-				y = GlobalState.get_player_pos().y
-			},
-			player_rotd = GlobalState.get_player_rotd()
+			#player_pos = {
+			#	x = GlobalState.get_player_pos().x,
+			#	y = GlobalobalState.get_player_pos().y
+			#},
+			#player_rotd = GlobalState.get_player_rotd()
 		},
 		PetState = {
 			age = PetState.get_age(),
@@ -46,6 +46,7 @@ func save_game():
 		}
 	}
 
+	# Create New Save File
 	var save_file = File.new()
 	save_file.open(SAVE_PATH, File.WRITE)
 	save_file.store_line(save_dict.to_json())
@@ -53,31 +54,30 @@ func save_game():
 
 	# Toggle Recently Saved Flag
 	set_recently_saved(true);
-	ResetTimer.start();
+	ResetRecentlySavedTimer.start();
 
 
 func load_game():
 	var save_file = File.new()
 	var data = {}
 
-	# Return If Save File Doens't Exist
+	# Return If Save File Doesn't Exist
 	if not save_file.file_exists(SAVE_PATH):
 		return
 
+	# Load & Parse Save File
 	save_file.open(SAVE_PATH, File.READ)
 	data.parse_json(save_file.get_as_text())
 
-	print(data["GlobalState"]["player_rotd"])
-
-	# Update Global Properties
+	# Set Global State Properties
 	GlobalState.set_units(data["GlobalState"]["units"])
 	GlobalState.set_intensity(data["GlobalState"]["intensity"])
 	GlobalState.set_intensity_cost(data["GlobalState"]["intensity_cost"])
 	GlobalState.set_wait_time(data["GlobalState"]["wait_time"])
-	GlobalState.set_player_pos(Vector2(data["GlobalState"]["player_pos"]["x"], data["GlobalState"]["player_pos"]["y"]))
-	GlobalState.set_player_rotd(data["GlobalState"]["player_rotd"])
+	#GlobalState.set_player_pos(Vector2(data["GlobalState"]["player_pos"]["x"], data["GlobalState"]["player_pos"]["y"]))
+	#GlobalState.set_player_rotd(data["GlobalState"]["player_rotd"])
 
-	# Update PetState Properties
+	# Set Pet State Properties
 	PetState.set_age(data["PetState"]["age"])
 	PetState.set_health(data["PetState"]["health"])
 	PetState.set_hunger(data["PetState"]["hunger"])

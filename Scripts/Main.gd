@@ -14,12 +14,12 @@ func _ready():
 
 	# Start Global Timer
 	if (GlobalState.is_timer_active()):
-		print("Global timer already active!")
+		print("INFO: Global timer already active!")
 	else:
 		GlobalState.start_timer()
 
 	if (PetState.is_timer_active()):
-		print('PetState timers already active!')
+		print('INFO: Pet timers already active!')
 	else:
 		PetState.start_timers()
 

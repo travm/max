@@ -118,7 +118,7 @@ autoplay = "Rise"
 [node name="Clouds Back" type="Sprite" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( -96, -38 )
+transform/pos = Vector2( -95, -38 )
 texture = ExtResource( 3 )
 centered = false
 
